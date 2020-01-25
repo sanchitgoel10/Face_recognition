@@ -22,7 +22,7 @@ while True:
     c.execute("select name from users where id = (?);", (ids,))
     result = c.fetchall()
     name = result[0][0]
-    if conf > 50:
+    if conf < 50:
       cv2.putText(img, name, (x+2,y+h-5), cv2.FONT_HERSHEY_SIMPLEX, 1, (150,255,0),2)
     else:
       cv2.putText(img, 'No Match', (x+2,y+h-5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255),2)
